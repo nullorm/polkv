@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	// todo - replace with grpc
 	s := &http.Server{
 		Addr:    ":8000",
 		Handler: handler{},
