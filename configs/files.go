@@ -2,7 +2,6 @@ package configs
 
 import (
 	"os"
-	"path"
 
 	"github.com/nullorm/polkv/app"
 	"go.uber.org/zap"
@@ -24,8 +23,7 @@ func ensureDir(dirpath string) {
 	}
 }
 
-func ensureFile(dirpath, filename string, size int64) {
-	filepath := path.Join(dirpath, filename)
+func ensureFile(filepath string, size int64) {
 	if fs, err := os.Stat(filepath); err != nil {
 		if os.IsNotExist(err) {
 			// create new file
